@@ -22,16 +22,15 @@
 <table>
 <thead><tr><th>Date</th><th>De ce</th><th>Cât le păstrăm</th></tr></thead>
 <tbody>
-<tr><td><strong>Cont:</strong> adresa de email, numele introdus (opțional), modul de autentificare (Google, Apple sau email)</td><td>Ca să-ți creăm contul, să te autentifici și să-ți sincronizăm listele pe toate dispozitivele</td><td>Până ștergi contul</td></tr>
-<tr><td><strong>Parola</strong> (doar la conturile cu email)</td><td>Pentru autentificare. Ajunge direct la furnizorul de autentificare, care păstrează doar un hash cu salt. Noi nu vedem și nu stocăm parola.</td><td>Ca hash, până ștergi contul</td></tr>
+<tr><td><strong>Cont:</strong> adresa de email și numele din contul Google sau Apple și cu care dintre ele te autentifici (la același cont se pot lega o autentificare Google și una Apple)</td><td>Ca să-ți creăm contul, să te autentifici și să-ți sincronizăm listele pe toate dispozitivele</td><td>Până ștergi contul</td></tr>
 <tr><td><strong>Listele tale:</strong> produse, cantități, unități, note, ofertele și magazinele alese, categoriile setate, magazinele preferate, ordinea listelor, alertele de preț</td><td>Asta e aplicația: îți păstrează listele și le potrivește cu ofertele</td><td>Până le ștergi pe ele sau contul</td></tr>
-<tr><td><strong>Persoanele cu care partajezi o listă:</strong> adresa de email invitată</td><td>Ca să primească acces la listă și un email de invitație</td><td>Până se șterge lista sau sunt scoși din ea</td></tr>
+<tr><td><strong>Persoanele cu care partajezi o listă:</strong> adresa de email invitată</td><td>Ca să primească acces la listă când se autentifică cu acel email. Noi nu le trimitem emailuri; invitația o trimiți tu de pe telefon.</td><td>Până se șterge lista sau sunt scoși din ea</td></tr>
 <tr><td><strong>Locația aproximativă</strong>, doar când deschizi tabul Traseu și permiți</td><td>Ca să găsim cele mai apropiate magazine și să planificăm traseul. E trimisă serverului nostru și serviciului de rutare (OpenRouteService) pentru calcul.</td><td>Nu se stochează. E folosită doar pentru cerere.</td></tr>
 <tr><td><strong>Tokenul pentru notificări</strong>, doar dacă permiți notificările</td><td>Ca să te anunțăm când un produs urmărit intră la ofertă</td><td>Până te deconectezi sau ștergi contul</td></tr>
 <tr><td><strong>Planul</strong> (Gratuit, Premium, pe viață)</td><td>Ca să deblocăm funcțiile Premium</td><td>Până ștergi contul</td></tr>
 </tbody>
 </table>
-<p>Nu colectăm contactele, pozele, locația GPS precisă, locația în fundal, ID-ul de publicitate sau istoricul de navigare.</p>
+<p>Nu colectăm contactele, pozele, locația GPS precisă, locația în fundal, ID-ul de publicitate sau istoricul de navigare. Te autentifici cu Google sau Apple, așa că nu vedem și nu stocăm nicio parolă.</p>
 
 <h2>Temeiul legal (GDPR)</h2>
 <p>Prelucrăm datele contului și ale listelor ca să-ți oferim serviciul cerut (contract, art. 6 alin. (1) lit. b GDPR). Locația și notificările sunt folosite doar cu permisiunea ta (consimțământ, art. 6 alin. (1) lit. a), pe care o poți retrage oricând din setările Android.</p>
@@ -45,13 +44,12 @@
 <tr><td>Apple (autentificare Apple, doar pe iPhone)</td><td>Autentificarea cu Apple</td><td>Centrele de date Apple</td></tr>
 <tr><td>OpenRouteService (HeiGIT gGmbH)</td><td>Calculul traseelor auto pornind de la locația aproximativă</td><td>Germania</td></tr>
 <tr><td>Expo (650 Industries)</td><td>Livrarea notificărilor și a actualizărilor aplicației</td><td>SUA (Clauze Contractuale Standard)</td></tr>
-<tr><td>Have I Been Pwned</td><td>La alegerea unei parole, verificarea în scurgerile de date cunoscute. Se trimit doar primele 5 caractere dintr-un hash al parolei; parola nu părăsește telefonul.</td><td>Rețeaua Cloudflare</td></tr>
 </tbody>
 </table>
 <p>Ofertele din aplicație provin din cataloage publice și nu conțin date personale. Nu vindem și nu închiriem datele tale nimănui și nu le folosim pentru publicitate.</p>
 
 <h2>Securitate</h2>
-<p>Toate datele circulă prin conexiuni criptate (HTTPS). Accesul la liste e limitat prin regulile bazei de date la tine și la cei cu care le partajezi. Parolele sunt păstrate doar ca hash-uri cu salt de furnizorul de autentificare.</p>
+<p>Toate datele circulă prin conexiuni criptate (HTTPS). Accesul la liste e limitat prin regulile bazei de date la tine și la cei cu care le partajezi. Autentificarea e gestionată de Google sau Apple, inclusiv verificarea în doi pași.</p>
 
 <h2>Drepturile tale</h2>
 <p>Poți cere acces, rectificarea, exportul sau ștergerea datelor ori te poți opune prelucrării, scriind la <a href="mailto:adrian.vaiesu+frugalshopping@gmail.com">adrian.vaiesu+frugalshopping@gmail.com</a>. Contul îl poți șterge singur din aplicație (Cont → Șterge contul) sau ca pe <a href="delete-account.html">această pagină</a>. Poți depune și o plângere la ANSPDCP (<a href="https://www.dataprotection.ro">dataprotection.ro</a>).</p>
