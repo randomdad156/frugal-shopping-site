@@ -87,6 +87,7 @@ PRIVACY_EN = f"""
 <tr><td><strong>Approximate location</strong>, only when you open the Route tab and allow it</td><td>To find the nearest store branches and plan the route. It’s sent to our server and to the routing service (OpenRouteService) to calculate the route.</td><td>Not stored. Used for the request only.</td></tr>
 <tr><td><strong>Push notification token</strong>, only if you allow notifications</td><td>To notify you when an item you’re watching goes on offer</td><td>Until you sign out or delete the account</td></tr>
 <tr><td><strong>Plan</strong> (Free, Premium, lifetime)</td><td>To unlock Premium features</td><td>Until you delete the account</td></tr>
+<tr><td><strong>Purchases</strong>, only if you buy Premium: which plan, when it started and renews, whether it’s a trial or cancelled, and a purchase identifier from Google Play or the App Store</td><td>To give you Premium and keep it in step with your subscription. Payment details (card, address) stay with Google or Apple; we never see them.</td><td>While you have the account; purchase records may be kept longer where tax or accounting law requires</td></tr>
 </tbody>
 </table>
 <p>We don’t collect your contacts, photos, precise GPS location, background location, advertising ID or browsing history. You sign in with Google or Apple, so we never see or store a password.</p>
@@ -102,6 +103,8 @@ PRIVACY_EN = f"""
 <tr><td>Google (Sign in with Google, Google Maps)</td><td>Signing in with Google; showing the map. Opening “Directions in Google Maps” sends the route to Google Maps.</td><td>Google’s data centers</td></tr>
 <tr><td>Apple (Sign in with Apple, iPhone only)</td><td>Signing in with Apple</td><td>Apple’s data centers</td></tr>
 <tr><td>OpenRouteService (HeiGIT gGmbH)</td><td>Calculating driving routes from your approximate location</td><td>Germany</td></tr>
+<tr><td>Google Play, Apple App Store</td><td>Selling Premium and handling payments, under their own privacy policies</td><td>Google’s and Apple’s data centers</td></tr>
+<tr><td>RevenueCat</td><td>Checking store purchases and telling us about renewals, cancellations and refunds. It knows your account id and your purchases, not your name or email.</td><td>USA (Standard Contractual Clauses)</td></tr>
 <tr><td>Expo (650 Industries)</td><td>Delivering push notifications and app updates</td><td>USA (Standard Contractual Clauses)</td></tr>
 </tbody>
 </table>
@@ -114,7 +117,7 @@ PRIVACY_EN = f"""
 <p>You can ask to access, correct, export or delete your data, or object to its processing, by writing to <a href="mailto:{EMAIL}">{EMAIL}</a>. You can delete your account yourself in the app (Account → Delete account) or as described on <a href="delete-account.html">this page</a>. You can also complain to the Romanian data protection authority, ANSPDCP (<a href="https://www.dataprotection.ro">dataprotection.ro</a>).</p>
 
 <h2>Deleting your data</h2>
-<p>Deleting your account removes your account, your lists (including lists you shared with others), price alerts, preferences and push tokens right away. Our hosting provider may keep encrypted backups for a short time before they are overwritten. Lists other people shared with you aren’t deleted; you just leave them.</p>
+<p>Deleting your account removes your account, your lists (including lists you shared with others), price alerts, preferences and push tokens right away. It doesn’t cancel a store subscription: cancel it in Google Play or the App Store. Our hosting provider may keep encrypted backups for a short time before they are overwritten. Lists other people shared with you aren’t deleted; you just leave them.</p>
 
 <h2>Children</h2>
 <p>Frugal Shopping is not meant for children under 16, and we don’t knowingly collect data from them.</p>
@@ -137,6 +140,7 @@ PRIVACY_RO = f"""
 <tr><td><strong>Locația aproximativă</strong>, doar când deschizi tabul Traseu și permiți</td><td>Ca să găsim cele mai apropiate magazine și să planificăm traseul. E trimisă serverului nostru și serviciului de rutare (OpenRouteService) pentru calcul.</td><td>Nu se stochează. E folosită doar pentru cerere.</td></tr>
 <tr><td><strong>Tokenul pentru notificări</strong>, doar dacă permiți notificările</td><td>Ca să te anunțăm când un produs urmărit intră la ofertă</td><td>Până te deconectezi sau ștergi contul</td></tr>
 <tr><td><strong>Planul</strong> (Gratuit, Premium, pe viață)</td><td>Ca să deblocăm funcțiile Premium</td><td>Până ștergi contul</td></tr>
+<tr><td><strong>Cumpărăturile</strong>, doar dacă cumperi Premium: planul, când a început și când se reînnoiește, dacă e perioadă de probă sau anulat și un identificator al cumpărăturii din Google Play sau App Store</td><td>Ca să-ți dăm Premium și să-l ținem în pas cu abonamentul. Datele de plată (card, adresă) rămân la Google sau Apple; noi nu le vedem.</td><td>Cât ai contul; evidența plăților poate fi păstrată mai mult acolo unde o cere legea fiscală sau contabilă</td></tr>
 </tbody>
 </table>
 <p>Nu colectăm contactele, pozele, locația GPS precisă, locația în fundal, ID-ul de publicitate sau istoricul de navigare. Te autentifici cu Google sau Apple, așa că nu vedem și nu stocăm nicio parolă.</p>
@@ -152,6 +156,8 @@ PRIVACY_RO = f"""
 <tr><td>Google (autentificare Google, Google Maps)</td><td>Autentificarea cu Google; afișarea hărții. „Indicații în Google Maps” trimite traseul către Google Maps.</td><td>Centrele de date Google</td></tr>
 <tr><td>Apple (autentificare Apple, doar pe iPhone)</td><td>Autentificarea cu Apple</td><td>Centrele de date Apple</td></tr>
 <tr><td>OpenRouteService (HeiGIT gGmbH)</td><td>Calculul traseelor auto pornind de la locația aproximativă</td><td>Germania</td></tr>
+<tr><td>Google Play, Apple App Store</td><td>Vânzarea Premium și procesarea plăților, conform propriilor politici de confidențialitate</td><td>Centrele de date Google și Apple</td></tr>
+<tr><td>RevenueCat</td><td>Verificarea cumpărăturilor din magazin și anunțarea reînnoirilor, anulărilor și rambursărilor. Cunoaște ID-ul contului tău și cumpărăturile, nu numele sau emailul.</td><td>SUA (Clauze Contractuale Standard)</td></tr>
 <tr><td>Expo (650 Industries)</td><td>Livrarea notificărilor și a actualizărilor aplicației</td><td>SUA (Clauze Contractuale Standard)</td></tr>
 </tbody>
 </table>
@@ -164,7 +170,7 @@ PRIVACY_RO = f"""
 <p>Poți cere acces, rectificarea, exportul sau ștergerea datelor ori te poți opune prelucrării, scriind la <a href="mailto:{EMAIL}">{EMAIL}</a>. Contul îl poți șterge singur din aplicație (Cont → Șterge contul) sau ca pe <a href="delete-account.html">această pagină</a>. Poți depune și o plângere la ANSPDCP (<a href="https://www.dataprotection.ro">dataprotection.ro</a>).</p>
 
 <h2>Ștergerea datelor</h2>
-<p>Ștergerea contului elimină imediat contul, listele (inclusiv cele partajate cu alții), alertele, preferințele și tokenurile pentru notificări. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise. Listele partajate de alții cu tine nu se șterg; doar ieși din ele.</p>
+<p>Ștergerea contului elimină imediat contul, listele (inclusiv cele partajate cu alții), alertele, preferințele și tokenurile pentru notificări. Nu anulează un abonament din magazin: anulează-l în Google Play sau App Store. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise. Listele partajate de alții cu tine nu se șterg; doar ieși din ele.</p>
 
 <h2>Copii</h2>
 <p>Frugal Shopping nu se adresează copiilor sub 16 ani și nu colectăm cu bună știință date de la ei.</p>
@@ -184,7 +190,7 @@ TERMS_EN = f"""
 <h2>Shared lists and acceptable use</h2>
 <p>When you share a list, the people you invite can see and, as editors, change it. Don’t use the app to send unwanted invitations, to harass anyone or for anything illegal. Report abuse to <a href="mailto:{EMAIL}">{EMAIL}</a>; we may suspend accounts that misuse the service.</p>
 <h2>Premium</h2>
-<p>Some features (such as Optimize, routes, sharing and price alerts) need Premium. When paid plans are available they are sold only through Google Play (or the App Store on iPhone), under their billing terms; subscriptions are managed and cancelled there. Deleting your account doesn’t cancel a store subscription.</p>
+<p>Some features (such as Optimize, routes, sharing and price alerts) need Premium. Premium is sold only through Google Play (or the App Store on iPhone), under their billing terms, at the price shown in the app before you buy. A monthly subscription renews automatically until you cancel it in the store; new subscribers may get a free first month, and if you cancel at least 24 hours before it ends you aren’t charged. Lifetime is a single payment. Refunds follow the store’s rules. Deleting your account doesn’t cancel a store subscription.</p>
 <h2>Availability and liability</h2>
 <p>The app is provided “as is”. We work to keep it running and accurate but can’t promise it will always be available or error-free. To the extent the law allows, we aren’t liable for indirect losses, such as money spent because of an outdated price. Nothing here limits rights you have as a consumer under Romanian or EU law.</p>
 <h2>Changes and law</h2>
@@ -202,7 +208,7 @@ TERMS_RO = f"""
 <h2>Liste partajate și utilizare acceptabilă</h2>
 <p>Când partajezi o listă, cei invitați o pot vedea și, ca editori, modifica. Nu folosi aplicația pentru invitații nedorite, hărțuire sau activități ilegale. Raportează abuzurile la <a href="mailto:{EMAIL}">{EMAIL}</a>; putem suspenda conturile care folosesc abuziv serviciul.</p>
 <h2>Premium</h2>
-<p>Unele funcții (Optimizare, trasee, partajare, alerte de preț) necesită Premium. Când planurile plătite vor fi disponibile, vor fi vândute doar prin Google Play (sau App Store pe iPhone), conform condițiilor lor de plată; abonamentele se gestionează și se anulează acolo. Ștergerea contului nu anulează abonamentul din magazin.</p>
+<p>Unele funcții (Optimizare, trasee, partajare, alerte de preț) necesită Premium. Premium se vinde doar prin Google Play (sau App Store pe iPhone), conform condițiilor lor de plată, la prețul afișat în aplicație înainte de cumpărare. Abonamentul lunar se reînnoiește automat până îl anulezi din magazin; abonații noi pot primi prima lună gratuit, iar dacă anulezi cu cel puțin 24 de ore înainte să se termine nu plătești nimic. Varianta pe viață e o singură plată. Rambursările urmează regulile magazinului. Ștergerea contului nu anulează abonamentul din magazin.</p>
 <h2>Disponibilitate și răspundere</h2>
 <p>Aplicația este oferită „ca atare”. Ne străduim să funcționeze și să fie corectă, dar nu putem garanta că va fi mereu disponibilă sau fără erori. În limitele legii, nu răspundem pentru pierderi indirecte, cum ar fi bani cheltuiți din cauza unui preț depășit. Nimic de aici nu îți limitează drepturile de consumator conform legii române sau europene.</p>
 <h2>Modificări și legea aplicabilă</h2>
