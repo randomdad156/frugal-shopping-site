@@ -32,12 +32,12 @@ footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top:1px 
 L = {
     'en': dict(
         lang='en', prefix='', other='ro/', other_label='Română', home='Frugal Shopping',
-        privacy='Privacy policy', terms='Terms of use', delete='Delete your account',
+        privacy='Privacy policy', terms='Terms of use', eula='License (EULA)', delete='Delete your account',
         updated=f'Last updated: {DATE_EN}', footer=f'Frugal Shopping · {DEV}, Romania · <a href="mailto:{EMAIL}">{EMAIL}</a>',
     ),
     'ro': dict(
         lang='ro', prefix='ro/', other='../', other_label='English', home='Frugal Shopping',
-        privacy='Politica de confidențialitate', terms='Termeni de utilizare', delete='Șterge-ți contul',
+        privacy='Politica de confidențialitate', terms='Termeni de utilizare', eula='Licență (EULA)', delete='Șterge-ți contul',
         updated=f'Ultima actualizare: {DATE_RO}', footer=f'Frugal Shopping · {DEV}, România · <a href="mailto:{EMAIL}">{EMAIL}</a>',
     ),
 }
@@ -58,7 +58,7 @@ def page(lang, name, title, body):
 <main>
 <header>
   <a class="brand" href="index.html">Frugal Shopping</a>
-  <nav><a href="privacy.html">{c['privacy']}</a><a href="terms.html">{c['terms']}</a><a href="delete-account.html">{c['delete']}</a><a href="{c['other']}{name}" hreflang="{'ro' if lang == 'en' else 'en'}">{c['other_label']}</a></nav>
+  <nav><a href="privacy.html">{c['privacy']}</a><a href="terms.html">{c['terms']}</a><a href="eula.html">{c['eula']}</a><a href="delete-account.html">{c['delete']}</a><a href="{c['other']}{name}" hreflang="{'ro' if lang == 'en' else 'en'}">{c['other_label']}</a></nav>
 </header>
 <h1>{title}</h1>
 <p class="meta">{c['updated']}</p>
@@ -81,13 +81,13 @@ PRIVACY_EN = f"""
 <table>
 <thead><tr><th>Data</th><th>Why</th><th>Kept</th></tr></thead>
 <tbody>
-<tr><td><strong>Account:</strong> the email address and name from your Google or Apple account, and which of them you sign in with (one Google and one Apple sign-in can be linked to the same account)</td><td>To create your account, sign you in and sync your lists across devices</td><td>Until you delete the account</td></tr>
+<tr><td><strong>Account:</strong> the email address and name from your Google or Apple account, and which of them you sign in with (one Google and one Apple sign-in can be linked to the same account)</td><td>To create your account, sign you in and sync your lists across devices</td><td>Until you delete the account; email and dates then 6 more months in the minimal record (see below)</td></tr>
 <tr><td><strong>Your lists:</strong> products, quantities, units, notes, chosen offers and stores, categories you set, favorite store branches, list order, price alerts</td><td>That’s the app: keeping your lists and matching them with offers</td><td>Until you delete them or the account</td></tr>
 <tr><td><strong>People you share a list with:</strong> the email address you invite</td><td>To give them access to the list when they sign in with that email. We don’t email them; you send the invitation yourself from your phone.</td><td>Until the list is deleted or they’re removed</td></tr>
 <tr><td><strong>Approximate location</strong>, only when you open the Route tab and allow it</td><td>To find the nearest store branches and plan the route. It’s sent to our server and to the routing service (OpenRouteService) to calculate the route.</td><td>Not stored. Used for the request only.</td></tr>
 <tr><td><strong>Push notification token</strong>, only if you allow notifications</td><td>To notify you when an item you’re watching goes on offer</td><td>Until you sign out or delete the account</td></tr>
 <tr><td><strong>Plan</strong> (Free, Premium, lifetime)</td><td>To unlock Premium features</td><td>Until you delete the account</td></tr>
-<tr><td><strong>Purchases</strong>, only if you buy Premium: which plan, when it started and renews, whether it’s a trial or cancelled, and a purchase identifier from Google Play or the App Store</td><td>To give you Premium and keep it in step with your subscription. Payment details (card, address) stay with Google or Apple; we never see them.</td><td>While you have the account; purchase records may be kept longer where tax or accounting law requires</td></tr>
+<tr><td><strong>Purchases</strong>, only if you buy Premium: which plan, when it started and renews, whether it’s a trial or cancelled, and a purchase identifier from Google Play or the App Store</td><td>To give you Premium and keep it in step with your subscription. Payment details (card, address) stay with Google or Apple; we never see them.</td><td>While you have the account, then 6 months in the minimal record (see below)</td></tr>
 </tbody>
 </table>
 <p>We don’t collect your contacts, photos, precise GPS location, background location, advertising ID or browsing history. You sign in with Google or Apple, so we never see or store a password.</p>
@@ -114,10 +114,18 @@ PRIVACY_EN = f"""
 <p>All data is sent over encrypted connections (HTTPS). Access to your lists is limited by database rules to you and the people you share them with. Signing in is handled by Google or Apple, including their two-step verification.</p>
 
 <h2>Your rights</h2>
-<p>You can ask to access, correct, export or delete your data, or object to its processing, by writing to <a href="mailto:{EMAIL}">{EMAIL}</a>. You can delete your account yourself in the app (Account → Delete account) or as described on <a href="delete-account.html">this page</a>. You can also complain to the Romanian data protection authority, ANSPDCP (<a href="https://www.dataprotection.ro">dataprotection.ro</a>).</p>
+<p>Under the GDPR you can access, correct, export or delete your data, restrict or object to its processing, and withdraw consent (for location and notifications) at any time. Most of this is in the app:</p>
+<ul>
+<li><strong>Get a copy of your data</strong> (access and portability, Art. 15 and 20 GDPR): Account → Download my data. You get a JSON file, a common machine-readable format, with your account, plan, lists, products, alerts and preferences.</li>
+<li><strong>Delete your account and data</strong> (Art. 17): Account → Delete account, or as described on <a href="delete-account.html">this page</a>.</li>
+<li><strong>Correct</strong> your lists and preferences directly in the app; your name and email come from your Google or Apple account.</li>
+</ul>
+<p>For anything else, write to <a href="mailto:{EMAIL}">{EMAIL}</a>. We answer within one month (extendable by two months for complex requests, in which case we tell you why). You can also complain to the Romanian data protection authority, ANSPDCP (<a href="https://www.dataprotection.ro">dataprotection.ro</a>).</p>
 
-<h2>Deleting your data</h2>
-<p>Deleting your account removes your account, your lists (including lists you shared with others), price alerts, preferences and push tokens right away. It doesn’t cancel a store subscription: cancel it in Google Play or the App Store. Our hosting provider may keep encrypted backups for a short time before they are overwritten. Lists other people shared with you aren’t deleted; you just leave them.</p>
+<h2>Deleting your data, and what we keep for 6 months</h2>
+<p>Deleting your account immediately and permanently removes your lists and their products (including lists you shared with others), price alerts, preferences, favorite stores, sign-ins and notification devices. Lists other people shared with you aren’t deleted; you just leave them.</p>
+<p>We keep a <strong>minimal record for 6 months</strong>: your account id, email address, sign-up and deletion dates, your plan and purchase history, and which sign-in methods you used. Nothing from your lists. We keep it only to establish, exercise or defend legal claims, such as a payment dispute, a refund or chargeback, or abuse of Premium or account linking (Art. 17(3)(e) and our legitimate interest under Art. 6(1)(f) GDPR). Nobody uses it for anything else, and it’s deleted automatically 6 months after the account was deleted. Our hosting provider may keep encrypted backups for a short time before they are overwritten.</p>
+<p>Deleting the account doesn’t cancel a store subscription: cancel it in Google Play or the App Store.</p>
 
 <h2>Children</h2>
 <p>Frugal Shopping is not meant for children under 16, and we don’t knowingly collect data from them.</p>
@@ -134,13 +142,13 @@ PRIVACY_RO = f"""
 <table>
 <thead><tr><th>Date</th><th>De ce</th><th>Cât le păstrăm</th></tr></thead>
 <tbody>
-<tr><td><strong>Cont:</strong> adresa de email și numele din contul Google sau Apple și cu care dintre ele te autentifici (la același cont se pot lega o autentificare Google și una Apple)</td><td>Ca să-ți creăm contul, să te autentifici și să-ți sincronizăm listele pe toate dispozitivele</td><td>Până ștergi contul</td></tr>
+<tr><td><strong>Cont:</strong> adresa de email și numele din contul Google sau Apple și cu care dintre ele te autentifici (la același cont se pot lega o autentificare Google și una Apple)</td><td>Ca să-ți creăm contul, să te autentifici și să-ți sincronizăm listele pe toate dispozitivele</td><td>Până ștergi contul; emailul și datele încă 6 luni în evidența minimă (vezi mai jos)</td></tr>
 <tr><td><strong>Listele tale:</strong> produse, cantități, unități, note, ofertele și magazinele alese, categoriile setate, magazinele preferate, ordinea listelor, alertele de preț</td><td>Asta e aplicația: îți păstrează listele și le potrivește cu ofertele</td><td>Până le ștergi pe ele sau contul</td></tr>
 <tr><td><strong>Persoanele cu care partajezi o listă:</strong> adresa de email invitată</td><td>Ca să primească acces la listă când se autentifică cu acel email. Noi nu le trimitem emailuri; invitația o trimiți tu de pe telefon.</td><td>Până se șterge lista sau sunt scoși din ea</td></tr>
 <tr><td><strong>Locația aproximativă</strong>, doar când deschizi tabul Traseu și permiți</td><td>Ca să găsim cele mai apropiate magazine și să planificăm traseul. E trimisă serverului nostru și serviciului de rutare (OpenRouteService) pentru calcul.</td><td>Nu se stochează. E folosită doar pentru cerere.</td></tr>
 <tr><td><strong>Tokenul pentru notificări</strong>, doar dacă permiți notificările</td><td>Ca să te anunțăm când un produs urmărit intră la ofertă</td><td>Până te deconectezi sau ștergi contul</td></tr>
 <tr><td><strong>Planul</strong> (Gratuit, Premium, pe viață)</td><td>Ca să deblocăm funcțiile Premium</td><td>Până ștergi contul</td></tr>
-<tr><td><strong>Cumpărăturile</strong>, doar dacă cumperi Premium: planul, când a început și când se reînnoiește, dacă e perioadă de probă sau anulat și un identificator al cumpărăturii din Google Play sau App Store</td><td>Ca să-ți dăm Premium și să-l ținem în pas cu abonamentul. Datele de plată (card, adresă) rămân la Google sau Apple; noi nu le vedem.</td><td>Cât ai contul; evidența plăților poate fi păstrată mai mult acolo unde o cere legea fiscală sau contabilă</td></tr>
+<tr><td><strong>Cumpărăturile</strong>, doar dacă cumperi Premium: planul, când a început și când se reînnoiește, dacă e perioadă de probă sau anulat și un identificator al cumpărăturii din Google Play sau App Store</td><td>Ca să-ți dăm Premium și să-l ținem în pas cu abonamentul. Datele de plată (card, adresă) rămân la Google sau Apple; noi nu le vedem.</td><td>Cât ai contul, apoi 6 luni în evidența minimă (vezi mai jos)</td></tr>
 </tbody>
 </table>
 <p>Nu colectăm contactele, pozele, locația GPS precisă, locația în fundal, ID-ul de publicitate sau istoricul de navigare. Te autentifici cu Google sau Apple, așa că nu vedem și nu stocăm nicio parolă.</p>
@@ -167,10 +175,18 @@ PRIVACY_RO = f"""
 <p>Toate datele circulă prin conexiuni criptate (HTTPS). Accesul la liste e limitat prin regulile bazei de date la tine și la cei cu care le partajezi. Autentificarea e gestionată de Google sau Apple, inclusiv verificarea în doi pași.</p>
 
 <h2>Drepturile tale</h2>
-<p>Poți cere acces, rectificarea, exportul sau ștergerea datelor ori te poți opune prelucrării, scriind la <a href="mailto:{EMAIL}">{EMAIL}</a>. Contul îl poți șterge singur din aplicație (Cont → Șterge contul) sau ca pe <a href="delete-account.html">această pagină</a>. Poți depune și o plângere la ANSPDCP (<a href="https://www.dataprotection.ro">dataprotection.ro</a>).</p>
+<p>Conform GDPR îți poți accesa, rectifica, exporta sau șterge datele, poți restricționa prelucrarea sau te poți opune ei și îți poți retrage oricând consimțământul (pentru locație și notificări). Majoritatea se fac din aplicație:</p>
+<ul>
+<li><strong>O copie a datelor tale</strong> (acces și portabilitate, art. 15 și 20 GDPR): Cont → Descarcă datele mele. Primești un fișier JSON, un format uzual, citibil automat, cu contul, planul, listele, produsele, alertele și preferințele.</li>
+<li><strong>Ștergerea contului și a datelor</strong> (art. 17): Cont → Șterge contul sau ca pe <a href="delete-account.html">această pagină</a>.</li>
+<li><strong>Rectificarea</strong> listelor și preferințelor, direct în aplicație; numele și emailul vin din contul Google sau Apple.</li>
+</ul>
+<p>Pentru orice altceva, scrie la <a href="mailto:{EMAIL}">{EMAIL}</a>. Răspundem în cel mult o lună (prelungibil cu două luni pentru cereri complexe, caz în care îți spunem de ce). Poți depune și o plângere la ANSPDCP (<a href="https://www.dataprotection.ro">dataprotection.ro</a>).</p>
 
-<h2>Ștergerea datelor</h2>
-<p>Ștergerea contului elimină imediat contul, listele (inclusiv cele partajate cu alții), alertele, preferințele și tokenurile pentru notificări. Nu anulează un abonament din magazin: anulează-l în Google Play sau App Store. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise. Listele partajate de alții cu tine nu se șterg; doar ieși din ele.</p>
+<h2>Ștergerea datelor și ce păstrăm 6 luni</h2>
+<p>Ștergerea contului elimină imediat și definitiv listele și produsele din ele (inclusiv listele partajate cu alții), alertele, preferințele, magazinele preferate, autentificările și dispozitivele pentru notificări. Listele partajate de alții cu tine nu se șterg; doar ieși din ele.</p>
+<p>Păstrăm o <strong>evidență minimă timp de 6 luni</strong>: ID-ul contului, adresa de email, datele înregistrării și ștergerii, planul și istoricul plăților și metodele de autentificare folosite. Nimic din liste. O păstrăm doar pentru constatarea, exercitarea sau apărarea unor drepturi în instanță, de exemplu o dispută de plată, o rambursare sau contestare a plății ori folosirea abuzivă a Premium sau a legării conturilor (art. 17 alin. (3) lit. e) și interesul nostru legitim, art. 6 alin. (1) lit. f) GDPR). Nu e folosită în alt scop și se șterge automat la 6 luni după ștergerea contului. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise.</p>
+<p>Ștergerea contului nu anulează un abonament din magazin: anulează-l în Google Play sau App Store.</p>
 
 <h2>Copii</h2>
 <p>Frugal Shopping nu se adresează copiilor sub 16 ani și nu colectăm cu bună știință date de la ei.</p>
@@ -180,7 +196,7 @@ PRIVACY_RO = f"""
 """
 
 TERMS_EN = f"""
-<p>These terms apply to the Frugal Shopping app, made by {DEV} (Romania). By creating an account or using the app you agree to them.</p>
+<p>These terms apply to the Frugal Shopping app, made by {DEV} (Romania). By creating an account or using the app you agree to them and to the <a href="eula.html">license agreement (EULA)</a>.</p>
 <h2>The service</h2>
 <p>Frugal Shopping helps you keep shopping lists and shows current supermarket offers that match them. Offers come from publicly available catalogs and are read automatically, so <strong>prices, dates and products can be wrong or out of date</strong>. Always check the price in the store. Routes and estimated totals are guides, not guarantees.</p>
 <h2>Not affiliated with the stores</h2>
@@ -198,7 +214,7 @@ TERMS_EN = f"""
 """
 
 TERMS_RO = f"""
-<p>Acești termeni se aplică aplicației Frugal Shopping, realizată de {DEV} (România). Creând un cont sau folosind aplicația, ești de acord cu ei.</p>
+<p>Acești termeni se aplică aplicației Frugal Shopping, realizată de {DEV} (România). Creând un cont sau folosind aplicația, ești de acord cu ei și cu <a href="eula.html">acordul de licență (EULA)</a>.</p>
 <h2>Serviciul</h2>
 <p>Frugal Shopping te ajută să ții liste de cumpărături și îți arată ofertele curente din supermarketuri care se potrivesc cu ele. Ofertele provin din cataloage publice și sunt citite automat, așa că <strong>prețurile, perioadele și produsele pot fi greșite sau depășite</strong>. Verifică mereu prețul în magazin. Traseele și totalurile estimate sunt orientative, nu garanții.</p>
 <h2>Nu suntem afiliați magazinelor</h2>
@@ -232,8 +248,8 @@ DELETE_EN = f"""
 <li>Your lists and their products, including lists you shared with others (they lose access too)</li>
 <li>Price alerts, favorite stores, remembered categories, list order, push notification tokens, your plan</li>
 </ul>
-<h2>What is kept</h2>
-<p>Nothing linked to you. Our hosting provider may keep encrypted backups for a short time before they are overwritten. Lists other people shared with you stay with their owners. If you bought Premium through Google Play, Google keeps its own purchase records; cancel the subscription in Google Play, since deleting the account doesn’t cancel it.</p>
+<h2>What is kept, and for how long</h2>
+<p>For <strong>6 months</strong>, only a minimal record for possible legal claims (payment disputes, refunds, abuse): your account id, email, sign-up and deletion dates, plan and purchase history, and sign-in methods. Nothing from your lists. It’s deleted automatically after 6 months. Want a copy of your data first? In the app: Account → Download my data. Our hosting provider may keep encrypted backups for a short time before they are overwritten. Lists other people shared with you stay with their owners. If you bought Premium through Google Play, Google keeps its own purchase records; cancel the subscription in Google Play, since deleting the account doesn’t cancel it.</p>
 """
 DELETE_RO = f"""
 <p>Îți poți șterge oricând contul Frugal Shopping și toate datele lui, din aplicație sau fără ea.</p>
@@ -250,8 +266,60 @@ DELETE_RO = f"""
 <li>Listele și produsele din ele, inclusiv listele partajate cu alții (și ei pierd accesul)</li>
 <li>Alertele de preț, magazinele preferate, categoriile memorate, ordinea listelor, tokenurile pentru notificări, planul</li>
 </ul>
-<h2>Ce se păstrează</h2>
-<p>Nimic legat de tine. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise. Listele partajate de alții cu tine rămân la proprietarii lor. Dacă ai cumpărat Premium prin Google Play, Google își păstrează evidența plăților; anulează abonamentul în Google Play, ștergerea contului nu îl anulează.</p>
+<h2>Ce se păstrează și cât timp</h2>
+<p>Timp de <strong>6 luni</strong>, doar o evidență minimă pentru eventuale dispute legale (plăți, rambursări, abuzuri): ID-ul contului, emailul, datele înregistrării și ștergerii, planul și istoricul plăților și metodele de autentificare. Nimic din liste. Se șterge automat după 6 luni. Vrei întâi o copie a datelor? În aplicație: Cont → Descarcă datele mele. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise. Listele partajate de alții cu tine rămân la proprietarii lor. Dacă ai cumpărat Premium prin Google Play, Google își păstrează evidența plăților; anulează abonamentul în Google Play, ștergerea contului nu îl anulează.</p>
+"""
+
+EULA_EN = f"""
+<p>This End User License Agreement (“EULA”) is between you and {DEV} (Romania), the developer of Frugal Shopping (“the app”). By installing or using the app you accept it. If you don’t, don’t install or use the app. The <a href="terms.html">terms of use</a> and the <a href="privacy.html">privacy policy</a> also apply.</p>
+<h2>1. License</h2>
+<p>You get a personal, non-exclusive, non-transferable, revocable license to install and use the app on devices you own or control, for your own non-commercial use, under this EULA and the rules of the store you got it from (Google Play or the App Store).</p>
+<h2>2. What you may not do</h2>
+<p>You may not copy, modify, distribute, sell, rent or sublicense the app; reverse-engineer, decompile or disassemble it except as far as the law expressly allows despite this restriction; remove notices of ownership; use it to break the law or other people’s rights; or try to get around its security, access limits or Premium features, or overload its servers (for example by automated scraping).</p>
+<h2>3. Ownership</h2>
+<p>The app, its design and its code belong to {DEV} and are licensed, not sold. Store names, logos and catalog content belong to their owners; the app is not affiliated with any retailer. Map data © OpenStreetMap contributors.</p>
+<h2>4. Your content</h2>
+<p>Your lists and notes stay yours. You let us store and process them only to run the app for you and the people you share them with, as the privacy policy describes.</p>
+<h2>5. Premium and purchases</h2>
+<p>Premium is bought through Google Play or the App Store under their terms; subscriptions renew until you cancel them there. Your rights as a consumer under EU and Romanian law are not affected.</p>
+<h2>6. Updates and availability</h2>
+<p>We may update the app, including automatically, to fix problems, add features or meet legal requirements, and may change or stop features. We try to keep it available but can’t guarantee it will always work without interruptions.</p>
+<h2>7. Prices and offers</h2>
+<p>Offers are read automatically from public catalogs and may be wrong or out of date. Check prices in the store before you buy.</p>
+<h2>8. Warranty and liability</h2>
+<p>The app is provided “as is”. To the extent the law allows, we disclaim implied warranties and aren’t liable for indirect or consequential losses. Nothing in this EULA limits liability that can’t be limited by law, such as for intent or gross negligence, or your statutory rights as a consumer.</p>
+<h2>9. Ending the license</h2>
+<p>You can end it at any time by deleting your account and uninstalling the app. It ends automatically if you break this EULA. Sections 3, 8 and 10 survive.</p>
+<h2>10. Law and contact</h2>
+<p>Romanian law applies, without depriving you of the protection of the mandatory rules of the country where you live. Contact: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<h2>11. App Store (iPhone)</h2>
+<p>If you got the app from Apple’s App Store: this EULA is between you and {DEV}, not Apple. Apple has no obligation to provide maintenance or support, and isn’t responsible for the app, any claims about it (including product liability, legal or regulatory compliance, or intellectual property claims) or warranty, except that if the app doesn’t conform to an applicable warranty you may notify Apple, which may refund the purchase price. Apple and its subsidiaries are third-party beneficiaries of this EULA and may enforce it. You confirm you’re not in a country under a U.S. Government embargo and aren’t on a U.S. Government list of prohibited or restricted parties.</p>
+"""
+
+EULA_RO = f"""
+<p>Acest Acord de licență pentru utilizatorul final („EULA”) este încheiat între tine și {DEV} (România), dezvoltatorul Frugal Shopping („aplicația”). Instalând sau folosind aplicația îl accepți. Dacă nu ești de acord, nu instala și nu folosi aplicația. Se aplică și <a href="terms.html">termenii de utilizare</a> și <a href="privacy.html">politica de confidențialitate</a>.</p>
+<h2>1. Licența</h2>
+<p>Primești o licență personală, neexclusivă, netransferabilă și revocabilă de a instala și folosi aplicația pe dispozitivele pe care le deții sau le controlezi, pentru uz propriu, necomercial, conform acestui EULA și regulilor magazinului din care ai obținut-o (Google Play sau App Store).</p>
+<h2>2. Ce nu ai voie să faci</h2>
+<p>Nu ai voie să copiezi, modifici, distribui, vinzi, închiriezi sau sublicențiezi aplicația; să o decompilezi, dezasamblezi sau să faci inginerie inversă, decât în măsura în care legea permite expres acest lucru; să elimini mențiunile de proprietate; să o folosești pentru a încălca legea sau drepturile altora; sau să încerci să-i ocolești securitatea, limitele de acces ori funcțiile Premium sau să-i suprasoliciți serverele (de exemplu prin extragere automată de date).</p>
+<h2>3. Proprietate</h2>
+<p>Aplicația, designul și codul ei aparțin lui {DEV} și sunt licențiate, nu vândute. Numele magazinelor, siglele și conținutul cataloagelor aparțin proprietarilor lor; aplicația nu este afiliată niciunui comerciant. Date de hartă © contribuitorii OpenStreetMap.</p>
+<h2>4. Conținutul tău</h2>
+<p>Listele și notele tale rămân ale tale. Ne permiți să le stocăm și să le prelucrăm doar ca să funcționeze aplicația pentru tine și pentru cei cu care le partajezi, așa cum descrie politica de confidențialitate.</p>
+<h2>5. Premium și plăți</h2>
+<p>Premium se cumpără prin Google Play sau App Store, conform condițiilor lor; abonamentele se reînnoiesc până le anulezi acolo. Drepturile tale de consumator conform legii europene și române nu sunt afectate.</p>
+<h2>6. Actualizări și disponibilitate</h2>
+<p>Putem actualiza aplicația, inclusiv automat, pentru a repara probleme, a adăuga funcții sau a respecta cerințe legale și putem schimba sau opri funcții. Ne străduim să fie disponibilă, dar nu putem garanta că va funcționa mereu fără întreruperi.</p>
+<h2>7. Prețuri și oferte</h2>
+<p>Ofertele sunt citite automat din cataloage publice și pot fi greșite sau depășite. Verifică prețurile în magazin înainte să cumperi.</p>
+<h2>8. Garanție și răspundere</h2>
+<p>Aplicația este oferită „ca atare”. În limitele legii, nu oferim garanții implicite și nu răspundem pentru pierderi indirecte. Nimic din acest EULA nu limitează răspunderea care nu poate fi limitată prin lege, de exemplu pentru intenție sau culpă gravă, și nici drepturile tale legale de consumator.</p>
+<h2>9. Încetarea licenței</h2>
+<p>O poți încheia oricând ștergându-ți contul și dezinstalând aplicația. Încetează automat dacă încalci acest EULA. Secțiunile 3, 8 și 10 rămân valabile.</p>
+<h2>10. Legea aplicabilă și contact</h2>
+<p>Se aplică legea română, fără a te priva de protecția regulilor obligatorii din țara în care locuiești. Contact: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<h2>11. App Store (iPhone)</h2>
+<p>Dacă ai obținut aplicația din App Store-ul Apple: acest EULA este încheiat între tine și {DEV}, nu cu Apple. Apple nu are obligația de a oferi întreținere sau asistență și nu răspunde pentru aplicație, pentru pretențiile legate de ea (inclusiv răspunderea pentru produs, conformitatea legală sau proprietatea intelectuală) ori pentru garanție, cu excepția faptului că, dacă aplicația nu respectă o garanție aplicabilă, poți anunța Apple, care îți poate rambursa prețul. Apple și filialele sale sunt terți beneficiari ai acestui EULA și îl pot pune în aplicare. Confirmi că nu te afli într-o țară aflată sub embargo al Guvernului SUA și că nu figurezi pe o listă a părților interzise sau restricționate a Guvernului SUA.</p>
 """
 
 INDEX_EN = """
@@ -259,6 +327,7 @@ INDEX_EN = """
 <ul>
 <li><a href="privacy.html">Privacy policy</a></li>
 <li><a href="terms.html">Terms of use</a></li>
+<li><a href="eula.html">License agreement (EULA)</a></li>
 <li><a href="delete-account.html">Delete your account</a></li>
 </ul>
 """
@@ -267,6 +336,7 @@ INDEX_RO = """
 <ul>
 <li><a href="privacy.html">Politica de confidențialitate</a></li>
 <li><a href="terms.html">Termeni de utilizare</a></li>
+<li><a href="eula.html">Acord de licență (EULA)</a></li>
 <li><a href="delete-account.html">Șterge-ți contul</a></li>
 </ul>
 """
@@ -280,6 +350,8 @@ page('en', 'privacy.html', 'Privacy policy', PRIVACY_EN)
 page('ro', 'privacy.html', 'Politica de confidențialitate', PRIVACY_RO)
 page('en', 'terms.html', 'Terms of use', TERMS_EN)
 page('ro', 'terms.html', 'Termeni de utilizare', TERMS_RO)
+page('en', 'eula.html', 'End User License Agreement (EULA)', EULA_EN)
+page('ro', 'eula.html', 'Acord de licență pentru utilizatorul final (EULA)', EULA_RO)
 page('en', 'delete-account.html', 'Delete your Frugal Shopping account', DELETE_EN)
 page('ro', 'delete-account.html', 'Șterge-ți contul Frugal Shopping', DELETE_RO)
 io.open(os.path.join(OUT, 'README.md'), 'w', encoding='utf-8', newline='\n').write(
