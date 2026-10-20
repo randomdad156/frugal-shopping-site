@@ -6,8 +6,8 @@ import pathlib
 OUT = str(pathlib.Path(__file__).resolve().parent.parent)
 EMAIL = 'adrian.vaiesu+frugalshopping@gmail.com'
 DEV = 'Adrian Vaiesu'
-DATE_EN = '19 October 2026'
-DATE_RO = '19 octombrie 2026'
+DATE_EN = '20 October 2026'
+DATE_RO = '20 octombrie 2026'
 
 CSS = """:root { --bg:#ffffff; --fg:#18181b; --muted:#52525b; --line:#e4e4e7; --brand:#0e4a56; --link:#0b6e7a; --card:#f4f4f5; }
 @media (prefers-color-scheme: dark) { :root { --bg:#09090b; --fg:#f4f4f5; --muted:#a1a1aa; --line:#27272a; --brand:#5fc6cf; --link:#7fd6de; --card:#18181b; } }
@@ -88,12 +88,15 @@ PRIVACY_EN = f"""
 <tr><td><strong>Push notification token</strong>, only if you allow notifications</td><td>To notify you when an item you’re watching goes on offer</td><td>Until you sign out or delete the account</td></tr>
 <tr><td><strong>Plan</strong> (Free, Premium, lifetime)</td><td>To unlock Premium features</td><td>Until you delete the account</td></tr>
 <tr><td><strong>Purchases</strong>, only if you buy Premium: which plan, when it started and renews, whether it’s a trial or cancelled, and a purchase identifier from Google Play or the App Store</td><td>To give you Premium and keep it in step with your subscription. Payment details (card, address) stay with Google or Apple; we never see them.</td><td>While you have the account, then 6 months in the minimal record (see below)</td></tr>
+<tr><td><strong>Account and security log:</strong> sign-ups and sign-ins; linking or unlinking Google and Apple; creating and deleting lists (the title and how many products, not the products); sharing (invitations with the invited email address, people added or removed, role changes); plan changes; data downloads; account deletion; the terms you accepted. Each entry says who did it and when.</td><td>To look into complaints and disputes, keep accounts secure and defend legal claims. Nobody sees it in the app; you get your entries in “Download my data”.</td><td>12 months. After you delete the account, at most 6 months.</td></tr>
+<tr><td><strong>Shared-list activity</strong>, only on lists shared with other people: who added, checked off, unchecked, renamed or removed which product, and when</td><td>So everyone on the list can see who changed what (list menu → Activity)</td><td>30 days, visible to the people on that list</td></tr>
+<tr><td><strong>Your agreement:</strong> which version of the Terms of Use and the EULA you accepted, when, and how (signing in under the notice, or the in-app prompt)</td><td>To show what was agreed</td><td>While you have the account, then 6 months in the minimal record</td></tr>
 </tbody>
 </table>
 <p>We don’t collect your contacts, photos, precise GPS location, background location, advertising ID or browsing history. You sign in with Google or Apple, so we never see or store a password.</p>
 
 <h2>Legal basis (GDPR)</h2>
-<p>We process your account and list data to provide the service you asked for (contract, Art. 6(1)(b) GDPR). Location and notifications are used only with your permission (consent, Art. 6(1)(a)), which you can withdraw at any time in Android’s settings.</p>
+<p>We process your account and list data to provide the service you asked for (contract, Art. 6(1)(b) GDPR). Location and notifications are used only with your permission (consent, Art. 6(1)(a)), which you can withdraw at any time in Android’s settings. The account and security log, the shared-list activity and the record of your agreement are based on our legitimate interest (Art. 6(1)(f)) in handling complaints and disputes, keeping accounts secure and showing what was agreed; you can object by writing to us.</p>
 
 <h2>Who processes the data for us</h2>
 <table>
@@ -116,7 +119,7 @@ PRIVACY_EN = f"""
 <h2>Your rights</h2>
 <p>Under the GDPR you can access, correct, export or delete your data, restrict or object to its processing, and withdraw consent (for location and notifications) at any time. Most of this is in the app:</p>
 <ul>
-<li><strong>Get a copy of your data</strong> (access and portability, Art. 15 and 20 GDPR): Account → Download my data. You get a JSON file, a common machine-readable format, with your account, plan, lists, products, alerts and preferences.</li>
+<li><strong>Get a copy of your data</strong> (access and portability, Art. 15 and 20 GDPR): Account → Download my data. You get a JSON file, a common machine-readable format, with your account, plan, the terms you accepted, lists, products, alerts, preferences, your account log and what you did on shared lists.</li>
 <li><strong>Delete your account and data</strong> (Art. 17): Account → Delete account, or as described on <a href="delete-account.html">this page</a>.</li>
 <li><strong>Correct</strong> your lists and preferences directly in the app; your name and email come from your Google or Apple account.</li>
 </ul>
@@ -124,8 +127,19 @@ PRIVACY_EN = f"""
 
 <h2>Deleting your data, and what we keep for 6 months</h2>
 <p>Deleting your account immediately and permanently removes your lists and their products (including lists you shared with others), price alerts, preferences, favorite stores, sign-ins and notification devices. Lists other people shared with you aren’t deleted; you just leave them.</p>
-<p>We keep a <strong>minimal record for 6 months</strong>: your account id, email address, sign-up and deletion dates, your plan and purchase history, and which sign-in methods you used. Nothing from your lists. We keep it only to establish, exercise or defend legal claims, such as a payment dispute, a refund or chargeback, or abuse of Premium or account linking (Art. 17(3)(e) and our legitimate interest under Art. 6(1)(f) GDPR). Nobody uses it for anything else, and it’s deleted automatically 6 months after the account was deleted. Our hosting provider may keep encrypted backups for a short time before they are overwritten.</p>
+<p>We keep a <strong>minimal record for 6 months</strong>: your account id, email address, sign-up and deletion dates, your plan and purchase history, which sign-in methods you used, the terms you accepted and your account log entries. Nothing from your lists. We keep it only to establish, exercise or defend legal claims, such as a payment dispute, a refund or chargeback, or abuse of Premium or account linking (Art. 17(3)(e) and our legitimate interest under Art. 6(1)(f) GDPR). Nobody uses it for anything else, and it’s deleted automatically 6 months after the account was deleted. Our hosting provider may keep encrypted backups for a short time before they are overwritten.</p>
 <p>Deleting the account doesn’t cancel a store subscription: cancel it in Google Play or the App Store.</p>
+
+<h2>What can and can’t be recovered</h2>
+<p>We don’t keep copies of your lists, so most deletions are final:</p>
+<ul>
+<li><strong>A deleted product</strong> can be brought back with <strong>Undo</strong> for a few seconds right after you delete it. After that it’s gone.</li>
+<li><strong>Checked-off products</strong> stay in “Purchased” until you clear them; clearing them can also be undone for a few seconds.</li>
+<li><strong>A deleted list can’t be recovered</strong>, by you or by us. The account log only notes that it was deleted (its title and how many products it had), not what was on it. On a shared list, the Activity shows the names of products removed in the last 30 days, so they can be added again by hand.</li>
+<li><strong>A deleted account can’t be recovered.</strong> The minimal record kept for 6 months can’t be used to restore the account or its lists.</li>
+<li>Our hosting provider’s backups exist only to recover from an outage; we don’t restore individual accounts or lists from them.</li>
+</ul>
+<p>Want your own copy? Use Account → Download my data whenever you like.</p>
 
 <h2>Children</h2>
 <p>Frugal Shopping is not meant for children under 16, and we don’t knowingly collect data from them.</p>
@@ -149,12 +163,15 @@ PRIVACY_RO = f"""
 <tr><td><strong>Tokenul pentru notificări</strong>, doar dacă permiți notificările</td><td>Ca să te anunțăm când un produs urmărit intră la ofertă</td><td>Până te deconectezi sau ștergi contul</td></tr>
 <tr><td><strong>Planul</strong> (Gratuit, Premium, pe viață)</td><td>Ca să deblocăm funcțiile Premium</td><td>Până ștergi contul</td></tr>
 <tr><td><strong>Cumpărăturile</strong>, doar dacă cumperi Premium: planul, când a început și când se reînnoiește, dacă e perioadă de probă sau anulat și un identificator al cumpărăturii din Google Play sau App Store</td><td>Ca să-ți dăm Premium și să-l ținem în pas cu abonamentul. Datele de plată (card, adresă) rămân la Google sau Apple; noi nu le vedem.</td><td>Cât ai contul, apoi 6 luni în evidența minimă (vezi mai jos)</td></tr>
+<tr><td><strong>Jurnalul contului și de securitate:</strong> înregistrarea și autentificările; legarea sau dezlegarea Google și Apple; crearea și ștergerea listelor (titlul și câte produse avea, nu produsele); partajarea (invitațiile cu adresa invitată, persoane adăugate sau scoase, schimbări de rol); schimbările de plan; descărcarea datelor; ștergerea contului; termenii acceptați. Fiecare înregistrare spune cine a făcut acțiunea și când.</td><td>Ca să analizăm reclamații și dispute, să păstrăm conturile în siguranță și să ne apărăm drepturile în instanță. Nu e vizibil în aplicație; înregistrările tale le primești în „Descarcă datele mele”.</td><td>12 luni. După ștergerea contului, cel mult 6 luni.</td></tr>
+<tr><td><strong>Activitatea pe listele partajate</strong>, doar pe listele partajate cu alții: cine a adăugat, bifat, debifat, redenumit sau șters ce produs și când</td><td>Ca toți cei de pe listă să vadă cine ce a schimbat (meniul listei → Activitate)</td><td>30 de zile, vizibilă celor de pe acea listă</td></tr>
+<tr><td><strong>Acordul tău:</strong> ce versiune a Termenilor de utilizare și a EULA ai acceptat, când și cum (autentificându-te sub mesajul de informare sau din fereastra din aplicație)</td><td>Ca să putem arăta ce s-a convenit</td><td>Cât ai contul, apoi 6 luni în evidența minimă</td></tr>
 </tbody>
 </table>
 <p>Nu colectăm contactele, pozele, locația GPS precisă, locația în fundal, ID-ul de publicitate sau istoricul de navigare. Te autentifici cu Google sau Apple, așa că nu vedem și nu stocăm nicio parolă.</p>
 
 <h2>Temeiul legal (GDPR)</h2>
-<p>Prelucrăm datele contului și ale listelor ca să-ți oferim serviciul cerut (contract, art. 6 alin. (1) lit. b GDPR). Locația și notificările sunt folosite doar cu permisiunea ta (consimțământ, art. 6 alin. (1) lit. a), pe care o poți retrage oricând din setările Android.</p>
+<p>Prelucrăm datele contului și ale listelor ca să-ți oferim serviciul cerut (contract, art. 6 alin. (1) lit. b GDPR). Locația și notificările sunt folosite doar cu permisiunea ta (consimțământ, art. 6 alin. (1) lit. a), pe care o poți retrage oricând din setările Android. Jurnalul contului și de securitate, activitatea pe listele partajate și evidența acordului tău se bazează pe interesul nostru legitim (art. 6 alin. (1) lit. f) de a rezolva reclamații și dispute, de a păstra conturile în siguranță și de a putea arăta ce s-a convenit; te poți opune scriindu-ne.</p>
 
 <h2>Cine prelucrează datele pentru noi</h2>
 <table>
@@ -177,7 +194,7 @@ PRIVACY_RO = f"""
 <h2>Drepturile tale</h2>
 <p>Conform GDPR îți poți accesa, rectifica, exporta sau șterge datele, poți restricționa prelucrarea sau te poți opune ei și îți poți retrage oricând consimțământul (pentru locație și notificări). Majoritatea se fac din aplicație:</p>
 <ul>
-<li><strong>O copie a datelor tale</strong> (acces și portabilitate, art. 15 și 20 GDPR): Cont → Descarcă datele mele. Primești un fișier JSON, un format uzual, citibil automat, cu contul, planul, listele, produsele, alertele și preferințele.</li>
+<li><strong>O copie a datelor tale</strong> (acces și portabilitate, art. 15 și 20 GDPR): Cont → Descarcă datele mele. Primești un fișier JSON, un format uzual, citibil automat, cu contul, planul, termenii acceptați, listele, produsele, alertele, preferințele, jurnalul contului și ce ai făcut pe listele partajate.</li>
 <li><strong>Ștergerea contului și a datelor</strong> (art. 17): Cont → Șterge contul sau ca pe <a href="delete-account.html">această pagină</a>.</li>
 <li><strong>Rectificarea</strong> listelor și preferințelor, direct în aplicație; numele și emailul vin din contul Google sau Apple.</li>
 </ul>
@@ -185,8 +202,19 @@ PRIVACY_RO = f"""
 
 <h2>Ștergerea datelor și ce păstrăm 6 luni</h2>
 <p>Ștergerea contului elimină imediat și definitiv listele și produsele din ele (inclusiv listele partajate cu alții), alertele, preferințele, magazinele preferate, autentificările și dispozitivele pentru notificări. Listele partajate de alții cu tine nu se șterg; doar ieși din ele.</p>
-<p>Păstrăm o <strong>evidență minimă timp de 6 luni</strong>: ID-ul contului, adresa de email, datele înregistrării și ștergerii, planul și istoricul plăților și metodele de autentificare folosite. Nimic din liste. O păstrăm doar pentru constatarea, exercitarea sau apărarea unor drepturi în instanță, de exemplu o dispută de plată, o rambursare sau contestare a plății ori folosirea abuzivă a Premium sau a legării conturilor (art. 17 alin. (3) lit. e) și interesul nostru legitim, art. 6 alin. (1) lit. f) GDPR). Nu e folosită în alt scop și se șterge automat la 6 luni după ștergerea contului. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise.</p>
+<p>Păstrăm o <strong>evidență minimă timp de 6 luni</strong>: ID-ul contului, adresa de email, datele înregistrării și ștergerii, planul și istoricul plăților, metodele de autentificare folosite, termenii acceptați și înregistrările din jurnalul contului. Nimic din liste. O păstrăm doar pentru constatarea, exercitarea sau apărarea unor drepturi în instanță, de exemplu o dispută de plată, o rambursare sau contestare a plății ori folosirea abuzivă a Premium sau a legării conturilor (art. 17 alin. (3) lit. e) și interesul nostru legitim, art. 6 alin. (1) lit. f) GDPR). Nu e folosită în alt scop și se șterge automat la 6 luni după ștergerea contului. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise.</p>
 <p>Ștergerea contului nu anulează un abonament din magazin: anulează-l în Google Play sau App Store.</p>
+
+<h2>Ce se poate și ce nu se poate recupera</h2>
+<p>Nu păstrăm copii ale listelor tale, așa că majoritatea ștergerilor sunt definitive:</p>
+<ul>
+<li><strong>Un produs șters</strong> poate fi readus cu <strong>Anulează</strong> câteva secunde imediat după ștergere. După aceea nu mai există.</li>
+<li><strong>Produsele bifate</strong> rămân la „Cumpărate” până le golești; și golirea poate fi anulată câteva secunde.</li>
+<li><strong>O listă ștearsă nu poate fi recuperată</strong>, nici de tine, nici de noi. Jurnalul contului notează doar că a fost ștearsă (titlul și câte produse avea), nu ce era pe ea. Pe o listă partajată, Activitatea arată numele produselor șterse în ultimele 30 de zile, ca să poată fi adăugate din nou de mână.</li>
+<li><strong>Un cont șters nu poate fi recuperat.</strong> Evidența minimă păstrată 6 luni nu poate fi folosită pentru a reface contul sau listele.</li>
+<li>Copiile de rezervă ale furnizorului de găzduire există doar pentru recuperarea după o defecțiune; nu refacem din ele conturi sau liste individuale.</li>
+</ul>
+<p>Vrei o copie a ta? Folosește oricând Cont → Descarcă datele mele.</p>
 
 <h2>Copii</h2>
 <p>Frugal Shopping nu se adresează copiilor sub 16 ani și nu colectăm cu bună știință date de la ei.</p>
@@ -202,7 +230,9 @@ TERMS_EN = f"""
 <h2>Not affiliated with the stores</h2>
 <p>Frugal Shopping is an independent app and is not affiliated with, endorsed or sponsored by Lidl, Kaufland, Carrefour, Mega Image, Penny, Auchan, Metro, Selgros or any other retailer. Store names and trademarks belong to their owners and are used only to identify where an offer is available.</p>
 <h2>Your account</h2>
-<p>You sign in with Google or Apple; keep that account safe, since you are responsible for activity on your Frugal Shopping account. Link only your own Google and Apple accounts. You can delete your account at any time (Account → Delete account, or see <a href="delete-account.html">this page</a>).</p>
+<p>You sign in with Google or Apple; keep that account safe, since you are responsible for activity on your Frugal Shopping account. Link only your own Google and Apple accounts. You can delete your account at any time (Account → Delete account, or see <a href="delete-account.html">this page</a>). We record which version of these terms and the EULA you accepted, and when.</p>
+<h2>Deleted data</h2>
+<p>Deleting a list or your account is permanent. A deleted product can be undone for a few seconds; after that, and for deleted lists and accounts, nothing can be recovered, by you or by us. The <a href="privacy.html">privacy policy</a> explains what is kept and what can be recovered. Download your data (Account → Download my data) if you want a copy.</p>
 <h2>Shared lists and acceptable use</h2>
 <p>When you share a list, the people you invite can see and, as editors, change it. Don’t use the app to send unwanted invitations, to harass anyone or for anything illegal. Report abuse to <a href="mailto:{EMAIL}">{EMAIL}</a>; we may suspend accounts that misuse the service.</p>
 <h2>Premium</h2>
@@ -220,7 +250,9 @@ TERMS_RO = f"""
 <h2>Nu suntem afiliați magazinelor</h2>
 <p>Frugal Shopping este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Lidl, Kaufland, Carrefour, Mega Image, Penny, Auchan, Metro, Selgros sau alt comerciant. Numele și mărcile magazinelor aparțin proprietarilor lor și sunt folosite doar ca să arate unde e disponibilă o ofertă.</p>
 <h2>Contul tău</h2>
-<p>Te autentifici cu Google sau Apple; păstrează acel cont în siguranță, pentru că răspunzi de activitatea din contul tău Frugal Shopping. Leagă doar propriile conturi Google și Apple. Îți poți șterge oricând contul (Cont → Șterge contul sau vezi <a href="delete-account.html">această pagină</a>).</p>
+<p>Te autentifici cu Google sau Apple; păstrează acel cont în siguranță, pentru că răspunzi de activitatea din contul tău Frugal Shopping. Leagă doar propriile conturi Google și Apple. Îți poți șterge oricând contul (Cont → Șterge contul sau vezi <a href="delete-account.html">această pagină</a>). Înregistrăm ce versiune a acestor termeni și a EULA ai acceptat și când.</p>
+<h2>Date șterse</h2>
+<p>Ștergerea unei liste sau a contului este definitivă. Ștergerea unui produs poate fi anulată câteva secunde; după aceea, ca și pentru listele și conturile șterse, nu se mai poate recupera nimic, nici de tine, nici de noi. <a href="privacy.html">Politica de confidențialitate</a> explică ce se păstrează și ce se poate recupera. Descarcă-ți datele (Cont → Descarcă datele mele) dacă vrei o copie.</p>
 <h2>Liste partajate și utilizare acceptabilă</h2>
 <p>Când partajezi o listă, cei invitați o pot vedea și, ca editori, modifica. Nu folosi aplicația pentru invitații nedorite, hărțuire sau activități ilegale. Raportează abuzurile la <a href="mailto:{EMAIL}">{EMAIL}</a>; putem suspenda conturile care folosesc abuziv serviciul.</p>
 <h2>Premium</h2>
@@ -249,7 +281,7 @@ DELETE_EN = f"""
 <li>Price alerts, favorite stores, remembered categories, list order, push notification tokens, your plan</li>
 </ul>
 <h2>What is kept, and for how long</h2>
-<p>For <strong>6 months</strong>, only a minimal record for possible legal claims (payment disputes, refunds, abuse): your account id, email, sign-up and deletion dates, plan and purchase history, and sign-in methods. Nothing from your lists. It’s deleted automatically after 6 months. Want a copy of your data first? In the app: Account → Download my data. Our hosting provider may keep encrypted backups for a short time before they are overwritten. Lists other people shared with you stay with their owners. If you bought Premium through Google Play, Google keeps its own purchase records; cancel the subscription in Google Play, since deleting the account doesn’t cancel it.</p>
+<p>For <strong>6 months</strong>, only a minimal record for possible legal claims (payment disputes, refunds, abuse): your account id, email, sign-up and deletion dates, plan and purchase history, sign-in methods, the terms you accepted and your account log entries. Nothing from your lists. It’s deleted automatically after 6 months, and it can’t be used to restore the account: <strong>nothing can be recovered after deletion</strong>. Want a copy of your data first? In the app: Account → Download my data. Our hosting provider may keep encrypted backups for a short time before they are overwritten. Lists other people shared with you stay with their owners. If you bought Premium through Google Play, Google keeps its own purchase records; cancel the subscription in Google Play, since deleting the account doesn’t cancel it.</p>
 """
 DELETE_RO = f"""
 <p>Îți poți șterge oricând contul Frugal Shopping și toate datele lui, din aplicație sau fără ea.</p>
@@ -267,7 +299,7 @@ DELETE_RO = f"""
 <li>Alertele de preț, magazinele preferate, categoriile memorate, ordinea listelor, tokenurile pentru notificări, planul</li>
 </ul>
 <h2>Ce se păstrează și cât timp</h2>
-<p>Timp de <strong>6 luni</strong>, doar o evidență minimă pentru eventuale dispute legale (plăți, rambursări, abuzuri): ID-ul contului, emailul, datele înregistrării și ștergerii, planul și istoricul plăților și metodele de autentificare. Nimic din liste. Se șterge automat după 6 luni. Vrei întâi o copie a datelor? În aplicație: Cont → Descarcă datele mele. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise. Listele partajate de alții cu tine rămân la proprietarii lor. Dacă ai cumpărat Premium prin Google Play, Google își păstrează evidența plăților; anulează abonamentul în Google Play, ștergerea contului nu îl anulează.</p>
+<p>Timp de <strong>6 luni</strong>, doar o evidență minimă pentru eventuale dispute legale (plăți, rambursări, abuzuri): ID-ul contului, emailul, datele înregistrării și ștergerii, planul și istoricul plăților, metodele de autentificare, termenii acceptați și înregistrările din jurnalul contului. Nimic din liste. Se șterge automat după 6 luni și nu poate fi folosită pentru a reface contul: <strong>după ștergere nu se mai poate recupera nimic</strong>. Vrei întâi o copie a datelor? În aplicație: Cont → Descarcă datele mele. Furnizorul de găzduire poate păstra copii de rezervă criptate pentru scurt timp, până sunt suprascrise. Listele partajate de alții cu tine rămân la proprietarii lor. Dacă ai cumpărat Premium prin Google Play, Google își păstrează evidența plăților; anulează abonamentul în Google Play, ștergerea contului nu îl anulează.</p>
 """
 
 EULA_EN = f"""
